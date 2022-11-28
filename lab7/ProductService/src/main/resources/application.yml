@@ -1,0 +1,12 @@
+server:
+  port: 8901
+spring:
+  application:
+    name: product-service
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://peer-2-server.com:9002/eureka/,http://peer-2-server.com:9002/eureka/,http://peer-3-server.com:9003/eureka/
+

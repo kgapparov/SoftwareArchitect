@@ -1,6 +1,5 @@
 package edu.tasks.sliding_window_maximum_239;
 
-import edu.tasks.sliding_window_maximum_239.practice.Solution;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

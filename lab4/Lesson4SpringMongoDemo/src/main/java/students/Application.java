@@ -26,21 +26,21 @@ public class Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		//create Students
-		Student student1 = new Student(101l, "John Doe", "jond@gmail.com", "0462234562");
-		Address address = new Address("1000 N 4th Street", "Fairfield", "52556");
-		student1.setAddress(address);
-		studentRepository.save(student1);
-
-		Student student2 = new Student(102l, "Alice Dane", "aliceDane@gmail.com", "1235311234");
-		Address address2 = new Address("1123 N 4th Street", "Fairfield", "52556");
-		student2.setAddress(address2);
-		studentRepository.save(student2);
-
-		Student student3 = new Student(103l, "Eddy Merphey", "eddyM@gmail.com", "04622124562");
-		Address address3 = new Address("1000 W 4th Street", "Iowa", "234332");
-		student3.setAddress(address3);
-		studentRepository.save(student3);
+//		//create Students
+//		Student student1 = new Student(101l, "John Doe", "jond@gmail.com", "0462234562");
+//		Address address = new Address("1000 N 4th Street", "Fairfield", "52556");
+//		student1.setAddress(address);
+//		studentRepository.save(student1);
+//
+//		Student student2 = new Student(102l, "Alice Dane", "aliceDane@gmail.com", "1235311234");
+//		Address address2 = new Address("1123 N 4th Street", "Fairfield", "52556");
+//		student2.setAddress(address2);
+//		studentRepository.save(student2);
+//
+//		Student student3 = new Student(103l, "Eddy Merphey", "eddyM@gmail.com", "04622124562");
+//		Address address3 = new Address("1000 W 4th Street", "Iowa", "234332");
+//		student3.setAddress(address3);
+//		studentRepository.save(student3);
 
 		System.out.println("-----------find by phone ----------------");
 		System.out.println(studentRepository.findStudentByPhone("04622124562"));

@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/kgapparov/springcloudconfig.git
+server:
+  port: 8888

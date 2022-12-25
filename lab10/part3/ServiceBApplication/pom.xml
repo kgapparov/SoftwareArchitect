@@ -8,17 +8,20 @@
         <version>3.0.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>miu.edu.swa.lab10.part2</groupId>
-    <artifactId>ServiceAApplication</artifactId>
+    <groupId>com.example</groupId>
+    <artifactId>ServiceBApplication</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ServiceAApplication</name>
-    <description>ServiceAApplication</description>
+    <name>ServiceBApplication</name>
+    <description>ServiceBApplication</description>
     <properties>
         <java.version>17</java.version>
         <spring-cloud.version>2022.0.0</spring-cloud.version>
     </properties>
-
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
@@ -26,16 +29,9 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-
     </dependencies>
     <dependencyManagement>
         <dependencies>
@@ -54,14 +50,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
             </plugin>
         </plugins>
     </build>

@@ -1,0 +1,39 @@
+package service;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
+
+import static service.Roles.*;
+
+@Configuration
+public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
+	@Override
+	@Bean
+	public AuthenticationManager authenticationManagerBean() throws Exception {
+		return super.authenticationManagerBean();
+	}
+
+	@Override
+	@Bean
+	public UserDetailsService userDetailsServiceBean() throws Exception {
+		return super.userDetailsServiceBean();
+	}
+
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.inMemoryAuthentication()
+		  .withUser("john").password("{noop}password1").roles("CUSTOMER")
+		  .and()
+		  .withUser("frank").password("{noop}password2").roles("EMPLOYEE", "MANAGER")
+				.and()
+				.withUser("anny").password("{noop}password3").roles(CUSTOMER.label)
+				.and()
+				.withUser("dany").password("{noop}password4").roles(CUSTOMER.label, EMPLOYEE.label)
+				.and()
+				.withUser("emmy").password("{noop}password5").roles(CUSTOMER.label, EMPLOYEE.label, MANAGER.label);
+	}
+}
